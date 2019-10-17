@@ -1,0 +1,7 @@
+C:\Users\Matt\source\repos\TO_lab002\TO_lab002\bin\Debug\TO_lab002.exe.config
+C:\Users\Matt\source\repos\TO_lab002\TO_lab002\bin\Debug\TO_lab002.exe
+C:\Users\Matt\source\repos\TO_lab002\TO_lab002\bin\Debug\TO_lab002.pdb
+C:\Users\Matt\source\repos\TO_lab002\TO_lab002\obj\Debug\TO_lab002.csprojAssemblyReference.cache
+C:\Users\Matt\source\repos\TO_lab002\TO_lab002\obj\Debug\TO_lab002.csproj.CoreCompileInputs.cache
+C:\Users\Matt\source\repos\TO_lab002\TO_lab002\obj\Debug\TO_lab002.exe
+C:\Users\Matt\source\repos\TO_lab002\TO_lab002\obj\Debug\TO_lab002.pdb
