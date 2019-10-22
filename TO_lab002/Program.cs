@@ -1,31 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Xml;
+using System.Windows.Forms;
 
 namespace TO_lab002
 {
-    class Program
+    static class Program
     {
-        static void Main(string[] args)
+        /// <summary>
+        /// Główny punkt wejścia dla aplikacji.
+        /// </summary>
+        [STAThread]
+        static void Main()
         {
-            XMLParser parser = new XMLParser("http://www.nbp.pl/kursy/xml/lasta.xml");
-            Repository repository;
-            parser.Parse(out repository);
-            foreach (Currency c in repository.GetCurrencies())
-            {
-                Console.WriteLine(c.GetName() + "( " + c.GetCode() + " ) = " + c.GetValue());
-            }
-            List<string> someList;
-            //IEnumerable<string> myEnumerable = repository.GetCurrencies().Where(c.);
-            Console.ReadKey();
-
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Waluty());
+            
         }
-        
-        
-        
     }
-   
 }

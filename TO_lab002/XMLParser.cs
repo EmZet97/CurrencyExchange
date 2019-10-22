@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,11 +10,15 @@ namespace TO_lab002
 {
     class XMLParser : IParser
     {
-        string URL;
-        public XMLParser(string URL)
+        //private string URL;
+        private string date;
+        string xml;
+
+        public XMLParser(string xml)
         {
-            this.URL = URL;
+            this.xml = xml;
         }
+
         public Repository Parse(out Repository repository)
         {
             repository = new Repository();
@@ -21,12 +26,16 @@ namespace TO_lab002
             {
                 repository.AddCurrency(curr);
             }
+            if (date != null)
+            {
+                repository.Date = date;
+            }
             return repository;
         }
 
         private IEnumerable<Currency> GetCurrency()
         {
-            using (XmlReader reader = XmlReader.Create(URL))
+            using (XmlReader reader = XmlReader.Create(new StringReader(xml)))
             {
                 string nazwa = "", kod = "", kurs = "";
                 int size = 0;
@@ -36,6 +45,9 @@ namespace TO_lab002
                     {
                         switch (reader.Name.ToString())
                         {
+                            case "data_publikacji":
+                                this.date = reader.ReadString();
+                                break;
                             case "nazwa_waluty":
                                 nazwa = reader.ReadString();
                                 size++;

@@ -9,10 +9,19 @@ namespace TO_lab002
     class Repository
     {
         private List<Currency> currencies = new List<Currency>();
+        private string date;
 
-        public Currency[] GetCurrencies()
+        public string Date
         {
-            return currencies.ToArray();
+            get { return date; }
+            set { date = value; }
+        }
+        public List<Currency> Currencies
+        {
+            get
+            {
+                return currencies;
+            }
         }
 
         public Currency GetCurrencyByCode(string code)
@@ -26,10 +35,18 @@ namespace TO_lab002
             return null;
         }
 
+        public Currency GetCurrencyByIndex(int index)
+        {
+            return currencies[index];
+        }
+
         public void AddCurrency(Currency currency)
         {
             currencies.Add(currency);
         }
-        public void RemoveCurrency(Currency currency) => currencies.Remove(currency);
+        public void RemoveCurrency(Currency currency)
+        {
+            currencies.Remove(currency);
+        }
     }
 }
